@@ -1,0 +1,86 @@
+:root{
+    --background-color: rgb(198, 224, 250);
+}
+
+body{
+    background-color: var(--background-color);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(126, 126, 235);
+    border-radius: 20px;
+}
+
+.eyes{
+    margin: 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-eye, .right-eye{
+    width: 20px;
+    height: 30px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pupil{
+    width: 18px;
+    height: 15px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    animation-name: movePupils;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.mouth{
+    width: 40px;
+    height: 2px;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: moveMouth;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes movePupils{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(4px);
+        height: 20px;
+    }
+}
+
+@keyframes moveMouth{
+    0%{
+        transform: translateX(0);
+        /* transform: scale(1.0); */
+        transform: width(30px);
+    }
+    100%{
+        transform: translateX(4px);
+        /* transform: scale(2.0); */
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+    }
+}

@@ -1,0 +1,103 @@
+:root{
+    --background-color: black;
+    --body-color: white;
+}
+
+body{
+    background-color: var(--background-color);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+.box{
+    width: 100px;
+    height: 150px;
+    background-color: var(--body-color);
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+}
+
+.eyes{
+    margin: 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-eye, .right-eye{
+    width: 20px;
+    height: 30px;
+    background-color: rgb(219, 202, 202);
+    margin: 5px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pupil{
+    width: 18px;
+    height: 15px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    animation-name: movePupils;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.mouth{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: black;
+    margin-left: 30%;
+    animation-name: moveMouth;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.ruffles{
+    display: flex;
+    bottom:0;
+}
+
+.ruffle{
+    height: 90px;
+    width: 50px;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background-color: var(--body-color);
+}
+
+@keyframes movePupils{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(4px);
+        height: 20px;
+    }
+}
+
+@keyframes moveMouth{
+    0%{
+        transform: translateX(15px);
+        width: 0;
+        height: 0;
+    }
+    100%{
+        transform: translateX(10px);
+        width: 30px;
+        height: 30px;
+    }
+}
